@@ -45,7 +45,7 @@ object Class15 {
     var jointyperightouter="right_outer"
     var jointypesemi="left_semi"
     var jointypeleftanti="left_anti"
-    var jointypecross="cross"
+    var jointypecrossjoin="cross"
 
     person.join(graduateProgram,joinExpression).show()
     person.join(graduateProgram,joinExpression,jointypeinner).show()
@@ -54,9 +54,9 @@ object Class15 {
     person.join(graduateProgram,joinExpression,jointyperightouter).show()
     person.join(graduateProgram,joinExpression,jointypesemi).show()
     person.join(graduateProgram,joinExpression,jointypeleftanti).show()
-    person.join(graduateProgram,joinExpression,jointypecross).show()
+    person.join(graduateProgram,joinExpression,jointypecrossjoin).show()
 
-    //join
+
 
     //println(joinExpression)
   }
