@@ -1,5 +1,5 @@
 import org.apache.spark.sql.SparkSession
-
+import org.apache.spark.sql.functions._
 //Join Example
 object Class15 {
 
@@ -32,11 +32,13 @@ object Class15 {
       (100, "Contributor"))
       .toDF("id", "status")
 
-    /*person.createOrReplaceTempView("person")
+    person.createOrReplaceTempView("person")
     graduateProgram.createOrReplaceTempView("graduateProgram")
     sparkStatus.createOrReplaceTempView("sparkStatus")
 
-    spark.sqlContext.sql("select * from person ").show()*/
+    spark.sqlContext.sql("select * from person ").show()
+    spark.sqlContext.sql("select * from graduateProgram ").show()
+    spark.sqlContext.sql("select * from sparkStatus ").show()
 
     val joinExpression=person.col("graduate_program") === graduateProgram.col("id")
     var jointypeinner="inner"
@@ -50,14 +52,55 @@ object Class15 {
     person.join(graduateProgram,joinExpression).show()
     person.join(graduateProgram,joinExpression,jointypeinner).show()
     person.join(graduateProgram,joinExpression,jointypeouter).show()
+
     person.join(graduateProgram,joinExpression,jointypeleftouter).show()
+    graduateProgram.join(person,joinExpression,jointypeleftouter).show()
+
     person.join(graduateProgram,joinExpression,jointyperightouter).show()
+
     person.join(graduateProgram,joinExpression,jointypesemi).show()
+    graduateProgram.join(person,joinExpression,jointypesemi).show()
+
     person.join(graduateProgram,joinExpression,jointypeleftanti).show()
+    graduateProgram.join(person,joinExpression,jointypeleftanti).show()
+
     person.join(graduateProgram,joinExpression,jointypecrossjoin).show()
+    graduateProgram.join(person,joinExpression,jointypecrossjoin).show()
 
 
+    person.withColumnRenamed("id","personId")
+      .join(sparkStatus,expr("array_contains(spark_status,id)"))
+      .show()
 
-    //println(joinExpression)
+    val gradProgramDupe = graduateProgram.withColumnRenamed("id", "graduate_program")
+
+    val joinExpr = gradProgramDupe.col("graduate_program") === person.col("graduate_program")
+    person.join(gradProgramDupe, joinExpr).show()
+
+    //will get error, Exception in thread "main"
+    // org.apache.spark.sql.AnalysisException: Reference 'graduate_program' is ambiguous, could be: graduate_program, graduate_program.;
+    //person.join(gradProgramDupe, joinExpr).select("graduate_program").show()
+
+    person
+      .join(gradProgramDupe, "graduate_program")
+      .select("graduate_program")
+      .show()
+
+    person
+      .join(gradProgramDupe,joinExpr)
+      .drop(person.col("graduate_program"))
+      .select("graduate_program")
+      .show()
+
+    person
+      .join(gradProgramDupe,joinExpr)
+      .drop(person.col("graduate_program"))
+      .show()
+
+    val gradProgram3 = graduateProgram.withColumnRenamed("id", "grad_id")
+    val joinExpr2 = person.col("graduate_program") === gradProgram3.col("grad_id")
+    person.join(gradProgram3, joinExpr2).show()
+
+    graduateProgram.join(person,joinExpression,jointypecrossjoin).explain()
   }
 }
