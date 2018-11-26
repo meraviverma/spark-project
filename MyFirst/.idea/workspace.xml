@@ -48,13 +48,13 @@
           <entry key="class" value="1" />
           <entry key="csv" value="1" />
           <entry key="java" value="2" />
-          <entry key="json" value="2" />
+          <entry key="json" value="4" />
           <entry key="orders_csv" value="1" />
           <entry key="orders_json" value="4" />
           <entry key="part-00000" value="1" />
           <entry key="sbt" value="2" />
           <entry key="sc" value="5" />
-          <entry key="scala" value="36" />
+          <entry key="scala" value="40" />
           <entry key="txt" value="9" />
         </counts>
       </usages-collector>
@@ -62,9 +62,9 @@
         <counts>
           <entry key="CLASS" value="1" />
           <entry key="JAVA" value="2" />
-          <entry key="JSON" value="6" />
+          <entry key="JSON" value="8" />
           <entry key="PLAIN_TEXT" value="12" />
-          <entry key="Scala" value="41" />
+          <entry key="Scala" value="45" />
           <entry key="sbt" value="2" />
         </counts>
       </usages-collector>
@@ -74,7 +74,7 @@
           <entry key="json" value="4" />
           <entry key="sbt" value="129" />
           <entry key="sc" value="740" />
-          <entry key="scala" value="7706" />
+          <entry key="scala" value="8718" />
           <entry key="txt" value="41" />
         </counts>
       </usages-collector>
@@ -83,7 +83,7 @@
           <entry key="JAVA" value="2" />
           <entry key="JSON" value="4" />
           <entry key="PLAIN_TEXT" value="41" />
-          <entry key="Scala" value="8446" />
+          <entry key="Scala" value="9458" />
           <entry key="sbt" value="129" />
         </counts>
       </usages-collector>
@@ -103,8 +103,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/Class15.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="103" column="75" selection-start-line="103" selection-start-column="75" selection-end-line="103" selection-end-column="75" />
+            <state relative-caret-position="195">
+              <caret line="15" lean-forward="true" selection-start-line="6" selection-start-column="4" selection-end-line="15" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
@@ -112,13 +112,33 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="jar://$USER_HOME$/.ivy2/cache/org.apache.spark/spark-sql_2.11/srcs/spark-sql_2.11-2.3.1-sources.jar!/org/apache/spark/sql/functions.scala">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/Class11.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="111">
-              <caret line="1303" column="6" selection-start-line="1303" selection-start-column="6" selection-end-line="1303" selection-end-column="6" />
+            <state relative-caret-position="17">
+              <caret line="3" column="7" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
+              <folding>
+                <element signature="e#0#59#0" expanded="true" />
+              </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/Class16.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="906">
+              <caret line="75" lean-forward="true" selection-start-line="75" selection-end-line="75" />
+              <folding>
+                <element signature="e#0#81#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/2015-summary.json">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -156,6 +176,7 @@
         <option value="$PROJECT_DIR$/build.sbt" />
         <option value="$PROJECT_DIR$/src/main/scala/Class14.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/Class15.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/Class16.scala" />
       </list>
     </option>
   </component>
@@ -206,10 +227,13 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541044055921" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542007384974" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\rv00451128\IdeaProjects\MyFirst" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\rv00451128\IdeaProjects\MyFirst" />
     </key>
@@ -226,7 +250,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Class15">
+  <component name="RunManager" selected="Application.Class16">
     <configuration name="Class11" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="Class11" />
       <module name="MyFirst" />
@@ -236,13 +260,6 @@
     </configuration>
     <configuration name="Class12" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="Class12" />
-      <module name="MyFirst" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Class13" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="Class13" />
       <module name="MyFirst" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -262,20 +279,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Class16" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="Class16" />
+      <module name="MyFirst" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
-      <item itemvalue="Application.Class13" />
       <item itemvalue="Application.Class12" />
       <item itemvalue="Application.Class11" />
       <item itemvalue="Application.Class14" />
       <item itemvalue="Application.Class15" />
+      <item itemvalue="Application.Class16" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Class16" />
         <item itemvalue="Application.Class15" />
         <item itemvalue="Application.Class14" />
         <item itemvalue="Application.Class11" />
         <item itemvalue="Application.Class12" />
-        <item itemvalue="Application.Class13" />
       </list>
     </recent_temporary>
   </component>
@@ -332,7 +356,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20953101" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -343,7 +366,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49924356" visible="true" weight="0.3715221" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49924356" visible="true" weight="0.20294599" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -400,13 +423,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="107">
           <caret line="18" column="46" lean-forward="true" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.ivy2/cache/org.apache.spark/spark-sql_2.11/srcs/spark-sql_2.11-2.3.1-sources.jar!/org/apache/spark/sql/Dataset.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="2161" column="61" selection-start-line="2161" selection-start-column="61" selection-end-line="2161" selection-end-column="61" />
         </state>
       </provider>
     </entry>
@@ -505,13 +521,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.ivy2/cache/org.apache.spark/spark-sql_2.11/srcs/spark-sql_2.11-2.3.1-sources.jar!/org/apache/spark/sql/SparkSession.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10489">
-          <caret line="659" column="6" lean-forward="true" selection-start-line="659" selection-start-column="6" selection-end-line="659" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/Class12.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-715">
@@ -548,15 +557,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/Class11.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#59#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/Class13.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1139">
@@ -577,20 +577,57 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$USER_HOME$/.ivy2/cache/org.apache.spark/spark-sql_2.11/srcs/spark-sql_2.11-2.3.1-sources.jar!/org/apache/spark/sql/functions.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="111">
+          <caret line="1303" column="6" selection-start-line="1303" selection-start-column="6" selection-end-line="1303" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/Class15.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="103" column="75" selection-start-line="103" selection-start-column="75" selection-end-line="103" selection-end-column="75" />
+        <state relative-caret-position="195">
+          <caret line="15" lean-forward="true" selection-start-line="6" selection-start-column="4" selection-end-line="15" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.ivy2/cache/org.apache.spark/spark-sql_2.11/srcs/spark-sql_2.11-2.3.1-sources.jar!/org/apache/spark/sql/functions.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/Class11.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="1303" column="6" selection-start-line="1303" selection-start-column="6" selection-end-line="1303" selection-end-column="6" />
+        <state relative-caret-position="17">
+          <caret line="3" column="7" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.ivy2/cache/org.apache.spark/spark-sql_2.11/srcs/spark-sql_2.11-2.3.1-sources.jar!/org/apache/spark/sql/Dataset.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="1362" column="4" lean-forward="true" selection-start-line="1362" selection-start-column="4" selection-end-line="1362" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.ivy2/cache/org.apache.spark/spark-sql_2.11/srcs/spark-sql_2.11-2.3.1-sources.jar!/org/apache/spark/sql/SparkSession.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="373" column="17" lean-forward="true" selection-start-line="373" selection-start-column="17" selection-end-line="373" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/2015-summary.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/Class16.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="906">
+          <caret line="75" lean-forward="true" selection-start-line="75" selection-end-line="75" />
+          <folding>
+            <element signature="e#0#81#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
