@@ -1,6 +1,7 @@
 import org.apache.spark.sql.types.{LongType, StringType, StructField, StructType}
 import org.apache.spark.sql.{Row, SparkSession}
 import org.apache.spark.sql.functions.{expr,col,column,lit}
+import org.apache.spark.sql.functions.{expr,pow}
 
 object Class16 {
 

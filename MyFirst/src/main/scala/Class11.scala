@@ -1,6 +1,7 @@
 import org.apache.spark.{HashPartitioner, RangePartitioner}
 import org.apache.spark.sql.SparkSession
 
+// Hash Partitioner and Range Partitioner Example
 object Class11 {
 
   def main(arg: Array[String]){

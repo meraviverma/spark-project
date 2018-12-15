@@ -5,6 +5,7 @@ import org.apache.spark.sql.hive._
 
 object Class12 {
 
+// Hive Windowing Function Example
   case class stock(date_ :String, Ticker:String, Open : Double, High : Double, Low : Double, Close : Double, Volume_for_the_day : Int)
   def main(args:Array[String]): Unit ={
     val spark=SparkSession
