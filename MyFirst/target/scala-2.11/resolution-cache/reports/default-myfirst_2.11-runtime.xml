@@ -7,7 +7,7 @@
 		revision="1.0"
 		conf="runtime"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
-		date="20181213123614"/>
+		date="20181215140902"/>
 	<dependencies>
 		<module organisation="com.stratio.datasource" name="spark-mongodb_2.10">
 			<revision name="0.11.1" status="release" pubdate="20160307195822" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="221">
