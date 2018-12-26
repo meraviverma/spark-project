@@ -265,7 +265,20 @@ object Class2 {
 
     //OUTPUT
    // maximum salaries in each deptList((phy,(sam,2200.0)), (cs,(bron,1200.0)))
+    println("############################# Zip ###############################")
 
+    val numRange=spark.sparkContext.parallelize(0 to 9,2)
+    val numRange2=spark.sparkContext.parallelize(2 to 11,2)
+
+    //Note: To Zip we need equal no of partition. Can't zip RDDs with unequal numbers of partitions: List(2, 4)
+    //Can only zip RDDs with same number of elements in each partition
+   // Two RDD should have same no of length as well as same no of partition
+
+    println(numRange.zip(numRange2).collect().mkString(","))
+
+    //OUTPUT
+    //(0,2),(1,3),(2,4),(3,5),(4,6),(5,7),(6,8),(7,9),(8,10),(9,11)
+    
   }
 
 }
