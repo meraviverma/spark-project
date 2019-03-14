@@ -16,7 +16,7 @@ object Class3 {
     spark.sparkContext.setLogLevel("ERROR")
 
     //################## Example Accumulator #################################################
-    
+
     val badpacket=spark.sparkContext.accumulator(0,"Bad packet")
     val zeroValueSales=spark.sparkContext.accumulator(0,"zero value sales")
     val missingFields=spark.sparkContext.accumulator(0,"missing fields")
@@ -48,6 +48,9 @@ object Class3 {
 
     //#########################################################################################
 
+    //############################## Broadcast Variable Example ##############################
+
+
     //Scala way to import a file and convert to list
     //C:\Users\rv00451128\Desktop\tutorial\dataset\data-master\data-master\retail_db\products
     val products = Source.fromFile("C:\\Users\\rv00451128\\IdeaProjects\\MyFirst\\part-00000").getLines().toList
@@ -68,10 +71,17 @@ object Class3 {
     val orderCompleteCount = spark.sparkContext.accumulator(0, "order com")
     val ordersFiltered = orders.
       filter(order => {
+        orderCompleteCount += 1
         order.split(",")(3) == "COMPLETE" || order.split(",")(3) == "CLOSED"
-        //if (iscompleteorder)orderCompleteCount += 1
+
       })
 
+    val ordersMap=ordersFiltered.map(order => {
+      (order.split(",")(0).toInt,order.split(",")(1))
+    })
+
+    val orderItems=spark.sparkContext.textFile("C:\\Users\\rv00451128\\IdeaProjects\\MyFirst\\order_items")
+    //val
     println(ordersFiltered.count())
     println(orderCompleteCount)
 
