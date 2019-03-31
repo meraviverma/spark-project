@@ -22,7 +22,7 @@ object Class11 {
     val sum=(((textfile.flatMap(a=>a.split(" "))).map(a=>(a,1)))).reduceByKey((x,y)=>(x+y))
 
     //saving output in a directory
-    sum.saveAsTextFile("C:\\Users\\rv00451128\\Desktop\\tutorial\\data\\wordcount")
+    //sum.saveAsTextFile("C:\\Users\\rv00451128\\Desktop\\tutorial\\data\\wordcount")
 
     // Hash Partitioner Example
     val counts = textfile.flatMap(line => line.split(" ")).map(word => (word, 1)).partitionBy(new HashPartitioner(10))
@@ -35,7 +35,7 @@ object Class11 {
     val counts_range = textfile.flatMap(line => line.split(" ")).map(word => (word, 1))
     val range=counts_range.partitionBy(new RangePartitioner(10,counts_range))
 
-    //counts_range.reduceByKey(_+_).saveAsTextFile("C:\\Users\\rv00451128\\Desktop\\tutorial\\data\\range_ex")
+    counts_range.reduceByKey(_+_).saveAsTextFile("C:\\Users\\rv00451128\\Desktop\\tutorial\\data\\range_ex")
 
     //Range Partitioned Example
     val data=Seq((1,11),(11,1111),(21,2121),(31,3131),(51,5151),(71,7171),(81,8181),(91,9191))
