@@ -5,6 +5,7 @@ import org.apache.spark.sql.functions.{expr,pow}
 
 object Class16 {
 
+  //StructType and StructField in spark
   def main(args: Array[String]): Unit = {
 
     System.setProperty("hadoop.home.dir", "D:\\software\\winutils-master\\hadoop")
@@ -86,5 +87,146 @@ object Class16 {
     df.sort("count").show(5)
 
     df.orderBy("count","DEST_COUNTRY_NAME").show(5)
+
+    /* OUTPUT
+    +-----+----+-----+
+| some| col|names|
++-----+----+-----+
+|Hello|null|    1|
++-----+----+-----+
+
++-----------------+
+|DEST_COUNTRY_NAME|
++-----------------+
+|    United States|
+|    United States|
++-----------------+
+only showing top 2 rows
+
++-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-------------+-------------+
+|DEST_COUNTRY_NAME|DEST_COUNTRY_NAME|DEST_COUNTRY_NAME|DEST_COUNTRY_NAME|DEST_COUNTRY_NAME|DEST_COUNTRY_NAME|  Destination| DEST_COUNTRY|
++-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-------------+-------------+
+|    United States|    United States|    United States|    United States|    United States|    United States|United States|United States|
+|    United States|    United States|    United States|    United States|    United States|    United States|United States|United States|
++-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-------------+-------------+
+only showing top 2 rows
+
++-------------+
+|  destcountry|
++-------------+
+|United States|
+|United States|
++-------------+
+only showing top 2 rows
+
++-----------------+-------------------+-----+-------------+
+|DEST_COUNTRY_NAME|ORIGIN_COUNTRY_NAME|count|withinCountry|
++-----------------+-------------------+-----+-------------+
+|    United States|            Romania|   15|        false|
+|    United States|            Croatia|    1|        false|
++-----------------+-------------------+-----+-------------+
+only showing top 2 rows
+
++-----------+---------------------------------+
+| avg(count)|count(DISTINCT DEST_COUNTRY_NAME)|
++-----------+---------------------------------+
+|1770.765625|                              132|
++-----------+---------------------------------+
+
++-----------------+-------------------+-----+---------+
+|DEST_COUNTRY_NAME|ORIGIN_COUNTRY_NAME|count|something|
++-----------------+-------------------+-----+---------+
+|    United States|            Romania|   15|        1|
+|    United States|            Croatia|    1|        1|
++-----------------+-------------------+-----+---------+
+only showing top 2 rows
+
++-----------------+-------------------+-----+---------+
+|DEST_COUNTRY_NAME|ORIGIN_COUNTRY_NAME|count|numberOne|
++-----------------+-------------------+-----+---------+
+|    United States|            Romania|   15|        1|
+|    United States|            Croatia|    1|        1|
++-----------------+-------------------+-----+---------+
+only showing top 2 rows
+
++-----------------+-------------------+-----+-------------+
+|DEST_COUNTRY_NAME|ORIGIN_COUNTRY_NAME|count|withincountry|
++-----------------+-------------------+-----+-------------+
+|    United States|            Romania|   15|        false|
+|    United States|            Croatia|    1|        false|
++-----------------+-------------------+-----+-------------+
+only showing top 2 rows
+
++-------------+-------------------+-----+
+|         dest|ORIGIN_COUNTRY_NAME|count|
++-------------+-------------------+-----+
+|United States|            Romania|   15|
+|United States|            Croatia|    1|
++-------------+-------------------+-----+
+only showing top 2 rows
+
++---------------------+-------+
+|This long column name|new col|
++---------------------+-------+
+|              Romania|Romania|
+|              Croatia|Croatia|
++---------------------+-------+
+only showing top 2 rows
+
++-----------------+-------------------+
+|DEST_COUNTRY_NAME|ORIGIN_COUNTRY_NAME|
++-----------------+-------------------+
+|    United States|            Romania|
+|    United States|            Croatia|
++-----------------+-------------------+
+only showing top 2 rows
+
+root
+ |-- DEST_COUNTRY_NAME: string (nullable = true)
+ |-- ORIGIN_COUNTRY_NAME: string (nullable = true)
+ |-- count: long (nullable = true)
+
+root
+ |-- DEST_COUNTRY_NAME: string (nullable = true)
+ |-- ORIGIN_COUNTRY_NAME: string (nullable = true)
+ |-- count: integer (nullable = true)
+
++-----------------+-------------------+-----+
+|DEST_COUNTRY_NAME|ORIGIN_COUNTRY_NAME|count|
++-----------------+-------------------+-----+
+|    United States|          Singapore|    1|
+|          Moldova|      United States|    1|
++-----------------+-------------------+-----+
+only showing top 2 rows
+
+256
+125
+126
++--------------------+-------------------+-----+
+|   DEST_COUNTRY_NAME|ORIGIN_COUNTRY_NAME|count|
++--------------------+-------------------+-----+
+|               Malta|      United States|    1|
+|Saint Vincent and...|      United States|    1|
+|       United States|            Croatia|    1|
+|       United States|          Gibraltar|    1|
+|       United States|          Singapore|    1|
++--------------------+-------------------+-----+
+only showing top 5 rows
+
++-----------------+-------------------+-----+
+|DEST_COUNTRY_NAME|ORIGIN_COUNTRY_NAME|count|
++-----------------+-------------------+-----+
+|     Burkina Faso|      United States|    1|
+|    Cote d'Ivoire|      United States|    1|
+|           Cyprus|      United States|    1|
+|         Djibouti|      United States|    1|
+|        Indonesia|      United States|    1|
++-----------------+-------------------+-----+
+only showing top 5 rows
+
+
+Process finished with exit code 0
+
+    * */
   }
 }

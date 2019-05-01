@@ -1,5 +1,8 @@
 import org.apache.spark.rdd.RDD
 import org.apache.spark.sql.SparkSession
+import org.apache.spark.sql.functions._
+
+import scala.tools.nsc.transform.patmat.Lit
 
 object Transformation_Action {
   def main(args:Array[String]):Unit={
@@ -11,7 +14,12 @@ object Transformation_Action {
       .appName("Transformation and action example")
       .master("local")
       .getOrCreate()
+
+    import sc.implicits._
+
     sc.sparkContext.setLogLevel("ERROR")
+
+
 
     println("######## MAP - TRANSFORMATION ###########")
     //1) MAP - TRANSFORMATION
@@ -43,9 +51,35 @@ object Transformation_Action {
     println(yfmap.collect().mkString(","))
 
     println("######## GROUP BY  - TRANSFORMATION ###########")
-    val xgb=sc.sparkContext.parallelize(List("John","Fred","Anna","James"))
+    val xgb =sc.sparkContext.parallelize(List("John","Fred","Anna","James"))
     val ygb=xgb.groupBy(x=>x.charAt(0))
     println(ygb.collect().mkString(","))
+
+    val newdf=sc.sparkContext.parallelize(List("1","2","3")).toDF()
+
+
+    newdf.withColumn("abc",monotonically_increasing_id()).show()
+    newdf.withColumn("def",lit(1)).show()
+
+    newdf.withColumnRenamed("value","literal").show()
+
+    newdf.orderBy(desc("count"), asc("DEST_COUNTRY_NAME")).show(2)
+
+
+    newdf.na.drop()
+    newdf.na.drop("any")
+    newdf.na.drop("all", Seq("StockCode", "InvoiceNo"))
+
+    newdf.na.fill("All Null values become this string")
+    newdf.na.fill(5, Seq("StockCode", "InvoiceNo"))
+    val fillColValues = Map(
+      "StockCode" -> 5,
+      "Description" -> "No Value"
+    )
+    newdf.na.fill(fillColValues)
+
+
+
 
 
 
